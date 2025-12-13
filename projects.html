@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Tyrel Barstow">
+    <title>Projects - Tyrel Barstow</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            color: #00ff00;
+            background: #000000;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                repeating-linear-gradient(0deg,
+                    rgba(0, 255, 0, 0.03) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(0, 255, 0, 0.03) 3px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #1a1a1a;
+            border: 4px solid #00ff00;
+            margin-bottom: 30px;
+            box-shadow:
+                0 0 10px #00ff00,
+                inset 0 0 20px rgba(0, 255, 0, 0.1);
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff00ff;
+            text-shadow:
+                3px 3px 0px #00ffff,
+                6px 6px 0px #ffff00,
+                0 0 20px #ff00ff;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'Press Start 2P', cursive;
+            color: #ffff00;
+            text-decoration: none;
+            font-size: 0.7em;
+            padding: 12px 20px;
+            border: 3px solid #ffff00;
+            background: #000000;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #ffff00;
+        }
+
+        .back-link:hover {
+            background: #ffff00;
+            color: #000000;
+            text-shadow: none;
+            box-shadow: 0 0 20px #ffff00;
+        }
+
+        .project {
+            background: #0a0a0a;
+            padding: 30px;
+            border: 4px solid #00ff00;
+            box-shadow:
+                0 0 20px rgba(0, 255, 0, 0.5),
+                inset 0 0 30px rgba(0, 255, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .project::before {
+            content: '▶';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #ff00ff;
+            font-size: 1.5em;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .project:hover {
+            border-color: #00ffff;
+            box-shadow:
+                0 0 30px rgba(0, 255, 255, 0.8),
+                inset 0 0 30px rgba(0, 255, 255, 0.1);
+        }
+
+        h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: #ff00ff;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        h3 {
+            font-family: 'Press Start 2P', cursive;
+            color: #00ffff;
+            margin-bottom: 15px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        p {
+            color: #00ff00;
+            font-size: 1.5em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            color: #00ff00;
+            font-size: 1.5em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        ul li::before {
+            content: '◆ ';
+            color: #ffff00;
+            margin-right: 10px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6em;
+            padding: 8px 15px;
+            border: 2px solid #ffff00;
+            background: #000000;
+            color: #ffff00;
+            text-shadow: 0 0 5px #ffff00;
+        }
+
+        .status {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7em;
+            padding: 10px 20px;
+            border: 3px solid #00ffff;
+            background: #000000;
+            color: #00ffff;
+            display: inline-block;
+            margin-top: 15px;
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        .status.active {
+            border-color: #00ff00;
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1a1a1a;
+            border: 3px solid #ff00ff;
+            margin-top: 30px;
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        footer p {
+            color: #00ffff;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            h3 {
+                font-size: 0.8em;
+            }
+
+            p,
+            ul li {
+                font-size: 1.3em;
+            }
+
+            .tech-tag {
+                font-size: 0.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← BACK TO HOME</a>
+
+        <header>
+            <h1>PROJECTS</h1>
+        </header>
+
+        <div class="project">
+            <h2>Algo Trading System</h2>
+            <p>
+                An automated algorithmic trading system designed to execute trades based on
+                predefined strategies and market analysis. The system monitors real-time market
+                data, identifies trading opportunities, and executes orders with minimal latency.
+            </p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Real-time market data processing and analysis</li>
+                <li>Multiple trading strategy implementations</li>
+                <li>Risk management and position sizing algorithms</li>
+                <li>Backtesting engine for strategy validation</li>
+                <li>Performance analytics and reporting dashboard</li>
+                <li>Integration with major trading platforms and exchanges</li>
+            </ul>
+
+            <h3>Technology Stack</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">REST APIs</span>
+                <span class="tech-tag">WebSockets</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Redis</span>
+            </div>
+
+            <span class="status active">STATUS: ACTIVE</span>
+        </div>
+
+        <div class="project">
+            <h2>Flutter Dating App</h2>
+            <p>
+                A modern, cross-platform dating application built with Flutter, featuring
+                real-time messaging, smart matching algorithms, and an intuitive user interface.
+                The app focuses on creating meaningful connections through enhanced profile
+                customization and intelligent compatibility matching.
+            </p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Swipe-based matching interface with smooth animations</li>
+                <li>Real-time chat with media sharing capabilities</li>
+                <li>Advanced profile creation with photo verification</li>
+                <li>Location-based discovery and matching</li>
+                <li>Interest-based compatibility algorithms</li>
+                <li>In-app notifications and activity feed</li>
+                <li>Privacy controls and safety features</li>
+            </ul>
+
+            <h3>Technology Stack</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Dart</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Cloud Firestore</span>
+                <span class="tech-tag">Cloud Functions</span>
+                <span class="tech-tag">Firebase Auth</span>
+            </div>
+
+            <span class="status">STATUS: IN DEVELOPMENT</span>
+        </div>
+
+        <div class="project">
+            <h2>Flutter Lifestyle Tracker</h2>
+            <p>
+                A comprehensive health and wellness application that helps users track multiple
+                aspects of their daily life including habits, feelings, nutrition, and overall
+                lifestyle patterns. The app provides insights and visualizations to help users
+                understand their behaviors and make positive changes.
+            </p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Habit tracking with streaks and goal setting</li>
+                <li>Mood and emotion logging with pattern analysis</li>
+                <li>Nutrition tracking with calorie and macro monitoring</li>
+                <li>Sleep quality tracking and analysis</li>
+                <li>Exercise and activity logging</li>
+                <li>Water intake and hydration reminders</li>
+                <li>Interactive charts and progress visualization</li>
+                <li>Daily, weekly, and monthly analytics</li>
+                <li>Custom reminders and notifications</li>
+                <li>Data export and backup functionality</li>
+            </ul>
+
+            <h3>Technology Stack</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Dart</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">Provider</span>
+                <span class="tech-tag">Charts</span>
+                <span class="tech-tag">Local Notifications</span>
+            </div>
+
+            <span class="status">STATUS: IN DEVELOPMENT</span>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Tyrel Barstow. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
