@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EverAfter Dating - Features and Safety Highlights">
+    <title>EverAfter Dating: Features and Safety Highlights</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            color: #00ff00;
+            background: #000000;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                repeating-linear-gradient(0deg,
+                    rgba(0, 255, 0, 0.03) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(0, 255, 0, 0.03) 3px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #1a1a1a;
+            border: 4px solid #00ff00;
+            margin-bottom: 30px;
+            box-shadow:
+                0 0 10px #00ff00,
+                inset 0 0 20px rgba(0, 255, 0, 0.1);
+            position: relative;
+        }
+
+        header::before,
+        header::after {
+            content: '◆';
+            position: absolute;
+            top: 10px;
+            color: #ff00ff;
+            font-size: 2em;
+            animation: blink 1s infinite;
+        }
+
+        header::before {
+            left: 20px;
+        }
+
+        header::after {
+            right: 20px;
+        }
+
+        @keyframes blink {
+            0%, 49% {
+                opacity: 1;
+            }
+            50%, 100% {
+                opacity: 0;
+            }
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ff00ff;
+            text-shadow:
+                3px 3px 0px #00ffff,
+                6px 6px 0px #ffff00,
+                0 0 20px #ff00ff;
+        }
+
+        nav {
+            background: #1a1a1a;
+            padding: 20px;
+            border: 3px solid #ffff00;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px #ffff00;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            font-family: 'Press Start 2P', cursive;
+            text-decoration: none;
+            color: #ffff00;
+            font-size: 0.8em;
+            padding: 15px 25px;
+            border: 3px solid #ffff00;
+            background: #000000;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #ffff00;
+        }
+
+        nav a:hover {
+            background: #ffff00;
+            color: #000000;
+            text-shadow: none;
+            box-shadow: 0 0 20px #ffff00;
+            transform: scale(1.05);
+        }
+
+        .content {
+            background: #0a0a0a;
+            padding: 40px;
+            border: 4px solid #00ff00;
+            box-shadow:
+                0 0 20px rgba(0, 255, 0, 0.5),
+                inset 0 0 30px rgba(0, 255, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: #ff00ff;
+            margin: 30px 0 20px 0;
+            font-size: 1.2em;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content p {
+            color: #00ff00;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+
+        .content ul {
+            color: #00ffff;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            line-height: 1.8;
+            padding-left: 40px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+        }
+
+        .content strong {
+            color: #ffff00;
+            text-shadow: 0 0 5px #ffff00;
+        }
+
+        .content a {
+            color: #00ffff;
+            text-decoration: none;
+            border-bottom: 2px solid #00ffff;
+            transition: all 0.3s ease;
+        }
+
+        .content a:hover {
+            color: #ffff00;
+            border-bottom-color: #ffff00;
+            text-shadow: 0 0 10px #ffff00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1a1a1a;
+            border: 3px solid #ff00ff;
+            margin-top: 30px;
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        footer p {
+            color: #00ffff;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .content h2 {
+                font-size: 1em;
+            }
+
+            .content p,
+            .content ul {
+                font-size: 1.3em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+
+            nav a {
+                font-size: 0.6em;
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>EverAfter Dating: Features and Safety Highlights</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <h2>Who we are</h2>
+            <p>EverAfter Dating is an adults-only (18+) social and dating app focused on respectful connections, safety, and transparency.</p>
+
+            <h2>Key features</h2>
+            <ul>
+                <li>Profile creation with photos and prompts.</li>
+                <li>Matching and messaging with user controls to block or report.</li>
+                <li>Safety-first onboarding with age confirmation and policy reminders.</li>
+                <li>Optional notifications for new matches and messages.</li>
+            </ul>
+
+            <h2>Safety and trust</h2>
+            <ul>
+                <li>Zero tolerance for harassment, CSAM, or exploitation.</li>
+                <li>In-app reporting for users, profiles, and messages; blocking stops all contact.</li>
+                <li>Moderation and enforcement to remove violators; repeat offenders are banned.</li>
+                <li>Advertising is supported; we honor ad ID reset/limit-ad-tracking settings.</li>
+            </ul>
+
+            <h2>Contact</h2>
+            <p>Questions or partnerships: <strong><a href="mailto:tyrelcb@gmail.com">tyrelcb@gmail.com</a></strong>.</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 EverAfter Dating. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
