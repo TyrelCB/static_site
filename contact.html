@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,13 @@
     <title>Contact - Tyrel Barstow</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'VT323', monospace;
             line-height: 1.6;
@@ -23,7 +24,7 @@
             position: relative;
             overflow-x: hidden;
         }
-        
+
         body::before {
             content: '';
             position: fixed;
@@ -31,18 +32,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                repeating-linear-gradient(
-                    0deg,
+            background:
+                repeating-linear-gradient(0deg,
                     rgba(0, 255, 0, 0.03) 0px,
                     transparent 1px,
                     transparent 2px,
-                    rgba(0, 255, 0, 0.03) 3px
-                );
+                    rgba(0, 255, 0, 0.03) 3px);
             pointer-events: none;
             z-index: 1;
         }
-        
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -50,30 +49,30 @@
             position: relative;
             z-index: 2;
         }
-        
+
         header {
             text-align: center;
             padding: 40px 20px;
             background: #1a1a1a;
             border: 4px solid #00ff00;
             margin-bottom: 30px;
-            box-shadow: 
+            box-shadow:
                 0 0 10px #00ff00,
                 inset 0 0 20px rgba(0, 255, 0, 0.1);
             position: relative;
         }
-        
+
         h1 {
             font-family: 'Press Start 2P', cursive;
             font-size: 2.5em;
             margin-bottom: 20px;
             color: #ff00ff;
-            text-shadow: 
+            text-shadow:
                 3px 3px 0px #00ffff,
                 6px 6px 0px #ffff00,
                 0 0 20px #ff00ff;
         }
-        
+
         .back-link {
             display: inline-block;
             font-family: 'Press Start 2P', cursive;
@@ -87,25 +86,25 @@
             transition: all 0.3s ease;
             text-shadow: 0 0 5px #ffff00;
         }
-        
+
         .back-link:hover {
             background: #ffff00;
             color: #000000;
             text-shadow: none;
             box-shadow: 0 0 20px #ffff00;
         }
-        
+
         .contact-section {
             background: #0a0a0a;
             padding: 30px;
             border: 4px solid #00ff00;
-            box-shadow: 
+            box-shadow:
                 0 0 20px rgba(0, 255, 0, 0.5),
                 inset 0 0 30px rgba(0, 255, 0, 0.05);
             margin-bottom: 30px;
             position: relative;
         }
-        
+
         .contact-section::before {
             content: '▶';
             position: absolute;
@@ -115,12 +114,20 @@
             font-size: 1.5em;
             animation: blink 1.5s infinite;
         }
-        
+
         @keyframes blink {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
         }
-        
+
         h2 {
             font-family: 'Press Start 2P', cursive;
             color: #ff00ff;
@@ -128,22 +135,22 @@
             font-size: 1.2em;
             text-shadow: 0 0 10px #ff00ff;
         }
-        
+
         p {
             color: #00ff00;
             font-size: 1.5em;
             line-height: 1.6;
             margin-bottom: 20px;
         }
-        
+
         .contact-form {
             margin-top: 30px;
         }
-        
+
         .form-group {
             margin-bottom: 25px;
         }
-        
+
         label {
             font-family: 'Press Start 2P', cursive;
             display: block;
@@ -152,7 +159,7 @@
             margin-bottom: 10px;
             text-shadow: 0 0 5px #00ffff;
         }
-        
+
         input[type="text"],
         input[type="email"],
         textarea {
@@ -166,19 +173,19 @@
             outline: none;
             transition: all 0.3s ease;
         }
-        
+
         input[type="text"]:focus,
         input[type="email"]:focus,
         textarea:focus {
             border-color: #00ffff;
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
         }
-        
+
         textarea {
             resize: vertical;
             min-height: 150px;
         }
-        
+
         .submit-btn {
             font-family: 'Press Start 2P', cursive;
             background: #000000;
@@ -191,31 +198,31 @@
             text-shadow: 0 0 5px #ffff00;
             width: 100%;
         }
-        
+
         .submit-btn:hover {
             background: #ffff00;
             color: #000000;
             text-shadow: none;
             box-shadow: 0 0 20px #ffff00;
         }
-        
+
         .submit-btn:active {
             transform: scale(0.98);
         }
-        
+
         .direct-contact {
             display: flex;
             flex-direction: column;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .contact-item {
             padding: 15px;
             border: 2px solid #00ffff;
             background: #000000;
         }
-        
+
         .contact-item strong {
             font-family: 'Press Start 2P', cursive;
             color: #ffff00;
@@ -223,18 +230,18 @@
             display: block;
             margin-bottom: 10px;
         }
-        
+
         .contact-item a {
             color: #00ffff;
             text-decoration: none;
             font-size: 1.3em;
             word-break: break-all;
         }
-        
+
         .contact-item a:hover {
             text-shadow: 0 0 10px #00ffff;
         }
-        
+
         .success-message {
             display: none;
             background: #0a0a0a;
@@ -243,17 +250,22 @@
             margin-bottom: 20px;
             text-align: center;
         }
-        
+
         .success-message.show {
             display: block;
             animation: fadeIn 0.5s ease;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
-        
+
         footer {
             text-align: center;
             padding: 30px;
@@ -262,74 +274,75 @@
             margin-top: 30px;
             box-shadow: 0 0 15px #ff00ff;
         }
-        
+
         footer p {
             color: #00ffff;
             font-size: 1.5em;
             text-shadow: 0 0 10px #00ffff;
         }
-        
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 1.5em;
             }
-            
+
             h2 {
                 font-size: 1em;
             }
-            
+
             p {
                 font-size: 1.3em;
             }
-            
+
             label {
                 font-size: 0.6em;
             }
-            
+
             .submit-btn {
                 font-size: 0.6em;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <a href="index.html" class="back-link">← BACK TO HOME</a>
-        
+
         <header>
             <h1>CONTACT</h1>
         </header>
-        
+
         <div class="contact-section">
             <h2>Send a Message</h2>
             <p>
-                Have a question, project idea, or just want to connect? Click the button below 
+                Have a question, project idea, or just want to connect? Click the button below
                 to send me an email directly.
             </p>
-            
-            <a href="mailto:tyrel@ffbinvestments.com?subject=Contact from Website" class="submit-btn" 
-               style="display: block; text-align: center; text-decoration: none; margin-top: 30px;">
+
+            <a href="mailto:tyrel@ffbinvestments.com?subject=Contact from Website" class="submit-btn"
+                style="display: block; text-align: center; text-decoration: none; margin-top: 30px;">
                 SEND EMAIL
             </a>
         </div>
-        
+
         <div class="contact-section">
             <h2>Direct Contact</h2>
             <p>Prefer to reach out directly? Use one of the methods below:</p>
-            
+
             <div class="direct-contact">
                 <div class="contact-item">
                     <strong>EMAIL:</strong>
                     <a href="mailto:tyrel@ffbinvestments.com">tyrel@ffbinvestments.com</a>
                 </div>
-                
+
                 <div class="contact-item">
                     <strong>LINKEDIN:</strong>
                     <a href="https://www.linkedin.com/in/tyrel-barstow-260a17102/" target="_blank">
                         linkedin.com/in/tyrel-barstow
                     </a>
                 </div>
-                
+
                 <div class="contact-item">
                     <strong>GITHUB:</strong>
                     <a href="https://github.com/TyrelCB" target="_blank">
@@ -338,10 +351,11 @@
                 </div>
             </div>
         </div>
-        
+
         <footer>
             <p>&copy; 2025 Tyrel Barstow. All rights reserved.</p>
         </footer>
     </div>
 </body>
+
 </html>
