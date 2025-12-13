@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,13 @@
     <title>Tyrel Barstow</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'VT323', monospace;
             line-height: 1.6;
@@ -23,7 +24,7 @@
             position: relative;
             overflow-x: hidden;
         }
-        
+
         body::before {
             content: '';
             position: fixed;
@@ -31,18 +32,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                repeating-linear-gradient(
-                    0deg,
+            background:
+                repeating-linear-gradient(0deg,
                     rgba(0, 255, 0, 0.03) 0px,
                     transparent 1px,
                     transparent 2px,
-                    rgba(0, 255, 0, 0.03) 3px
-                );
+                    rgba(0, 255, 0, 0.03) 3px);
             pointer-events: none;
             z-index: 1;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -50,19 +49,19 @@
             position: relative;
             z-index: 2;
         }
-        
+
         header {
             text-align: center;
             padding: 40px 20px;
             background: #1a1a1a;
             border: 4px solid #00ff00;
             margin-bottom: 30px;
-            box-shadow: 
+            box-shadow:
                 0 0 10px #00ff00,
                 inset 0 0 20px rgba(0, 255, 0, 0.1);
             position: relative;
         }
-        
+
         header::before,
         header::after {
             content: '◆';
@@ -72,51 +71,64 @@
             font-size: 2em;
             animation: blink 1s infinite;
         }
-        
+
         header::before {
             left: 20px;
         }
-        
+
         header::after {
             right: 20px;
         }
-        
+
         @keyframes blink {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
         }
-        
+
         h1 {
             font-family: 'Press Start 2P', cursive;
             font-size: 2.5em;
             margin-bottom: 20px;
             color: #ff00ff;
-            text-shadow: 
+            text-shadow:
                 3px 3px 0px #00ffff,
                 6px 6px 0px #ffff00,
                 0 0 20px #ff00ff;
             animation: glitch 3s infinite;
         }
-        
+
         @keyframes glitch {
-            0%, 90%, 100% {
+
+            0%,
+            90%,
+            100% {
                 transform: translate(0);
             }
+
             92% {
                 transform: translate(-2px, 2px);
             }
+
             94% {
                 transform: translate(2px, -2px);
             }
         }
-        
+
         .tagline {
             font-size: 1.8em;
             color: #00ffff;
             margin-top: 10px;
             text-shadow: 0 0 10px #00ffff;
         }
-        
+
         nav {
             background: #1a1a1a;
             padding: 20px;
@@ -124,7 +136,7 @@
             margin-bottom: 30px;
             box-shadow: 0 0 15px #ffff00;
         }
-        
+
         nav ul {
             list-style: none;
             display: flex;
@@ -132,7 +144,7 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-        
+
         nav a {
             font-family: 'Press Start 2P', cursive;
             text-decoration: none;
@@ -145,7 +157,7 @@
             text-shadow: 0 0 5px #ffff00;
             position: relative;
         }
-        
+
         nav a:hover {
             background: #ffff00;
             color: #000000;
@@ -153,25 +165,25 @@
             box-shadow: 0 0 20px #ffff00;
             transform: scale(1.05);
         }
-        
+
         .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-bottom: 30px;
         }
-        
+
         .content-card {
             background: #0a0a0a;
             padding: 30px;
             border: 4px solid #00ff00;
-            box-shadow: 
+            box-shadow:
                 0 0 20px rgba(0, 255, 0, 0.5),
                 inset 0 0 30px rgba(0, 255, 0, 0.05);
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .content-card::before {
             content: '▶';
             position: absolute;
@@ -181,15 +193,15 @@
             font-size: 1.5em;
             animation: blink 1.5s infinite;
         }
-        
+
         .content-card:hover {
             transform: translateY(-5px);
-            box-shadow: 
+            box-shadow:
                 0 0 30px rgba(0, 255, 0, 0.8),
                 inset 0 0 30px rgba(0, 255, 0, 0.1);
             border-color: #00ffff;
         }
-        
+
         .content-card h2 {
             font-family: 'Press Start 2P', cursive;
             color: #ff00ff;
@@ -197,14 +209,14 @@
             font-size: 1.2em;
             text-shadow: 0 0 10px #ff00ff;
         }
-        
+
         .content-card p {
             color: #00ff00;
             margin-bottom: 20px;
             font-size: 1.5em;
             line-height: 1.4;
         }
-        
+
         .content-card a {
             display: inline-block;
             font-family: 'Press Start 2P', cursive;
@@ -217,14 +229,14 @@
             transition: all 0.3s ease;
             text-shadow: 0 0 5px #00ffff;
         }
-        
+
         .content-card a:hover {
             background: #00ffff;
             color: #000000;
             text-shadow: none;
             box-shadow: 0 0 20px #00ffff;
         }
-        
+
         footer {
             text-align: center;
             padding: 30px;
@@ -233,78 +245,73 @@
             margin-top: 30px;
             box-shadow: 0 0 15px #ff00ff;
         }
-        
+
         footer p {
             color: #00ffff;
             font-size: 1.5em;
             text-shadow: 0 0 10px #00ffff;
         }
-        
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 1.5em;
             }
-            
+
             nav ul {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .content-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             nav a {
                 font-size: 0.6em;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
             <h1>Tyrel Barstow</h1>
             <p class="tagline">Welcome to my digital space</p>
         </header>
-        
+
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#content">Content</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        
+
         <div class="content-grid">
             <div class="content-card" id="about">
                 <h2>About</h2>
                 <p>This is a static content site showcasing various projects, media, and resources.</p>
                 <a href="about.html">Learn More</a>
             </div>
-            
+
             <div class="content-card" id="projects">
                 <h2>Projects</h2>
                 <p>Explore a collection of projects and creative works.</p>
                 <a href="projects.html">View Projects</a>
             </div>
-            
-            <div class="content-card" id="content">
-                <h2>Static Content</h2>
-                <p>Access documents, images, videos, and other static resources.</p>
-                <a href="content/">Browse Content</a>
-            </div>
-            
+
             <div class="content-card" id="contact">
                 <h2>Contact</h2>
                 <p>Get in touch for collaborations and inquiries.</p>
                 <a href="contact.html">Contact Me</a>
             </div>
         </div>
-        
+
         <footer>
             <p>&copy; 2025 Tyrel Barstow. All rights reserved.</p>
         </footer>
     </div>
 </body>
+
 </html>
