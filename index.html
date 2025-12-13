@@ -217,6 +217,7 @@
                     0 0 20px rgba(0, 255, 0, 0.5),
                     inset 0 0 30px rgba(0, 255, 0, 0.05);
             }
+
             25% {
                 transform: scale(1.05);
                 border-color: #00ffff;
@@ -224,6 +225,7 @@
                     0 0 40px rgba(0, 255, 255, 1),
                     inset 0 0 50px rgba(0, 255, 255, 0.3);
             }
+
             50% {
                 transform: scale(1.08);
                 border-color: #ffff00;
@@ -231,6 +233,7 @@
                     0 0 50px rgba(255, 255, 0, 1),
                     inset 0 0 60px rgba(255, 255, 0, 0.4);
             }
+
             75% {
                 transform: scale(1.05);
                 border-color: #ff00ff;
@@ -238,6 +241,7 @@
                     0 0 40px rgba(255, 0, 255, 1),
                     inset 0 0 50px rgba(255, 0, 255, 0.3);
             }
+
             100% {
                 transform: scale(1);
                 box-shadow:
@@ -304,6 +308,7 @@
             nav ul {
                 flex-direction: column;
                 align-items: center;
+                gap: 25px;
             }
 
             .content-grid {
@@ -312,6 +317,8 @@
 
             nav a {
                 font-size: 0.6em;
+                width: 200px;
+                text-align: center;
             }
         }
     </style>
@@ -360,22 +367,22 @@
     <script>
         // Smooth scroll and animate cards when nav links are clicked
         document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href').substring(1);
                 const targetCard = document.getElementById(targetId);
-                
+
                 if (targetCard) {
                     // Scroll to the card
-                    targetCard.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'center' 
+                    targetCard.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
                     });
-                    
+
                     // Add animation class
                     targetCard.classList.add('animate');
-                    
+
                     // Remove animation class after animation completes
                     setTimeout(() => {
                         targetCard.classList.remove('animate');
