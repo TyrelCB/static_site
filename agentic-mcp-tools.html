@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agentic-MCP-Tools - A Model Context Protocol server by Tyrel Barstow">
+    <title>Agentic-MCP-Tools - Tyrel Barstow</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            color: #00ff00;
+            background: #000000;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                repeating-linear-gradient(0deg,
+                    rgba(0, 255, 0, 0.03) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(0, 255, 0, 0.03) 3px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #1a1a1a;
+            border: 4px solid #00ff00;
+            margin-bottom: 30px;
+            box-shadow:
+                0 0 10px #00ff00,
+                inset 0 0 20px rgba(0, 255, 0, 0.1);
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #ff00ff;
+            text-shadow:
+                3px 3px 0px #00ffff,
+                6px 6px 0px #ffff00,
+                0 0 20px #ff00ff;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'Press Start 2P', cursive;
+            color: #ffff00;
+            text-decoration: none;
+            font-size: 0.7em;
+            padding: 12px 20px;
+            border: 3px solid #ffff00;
+            background: #000000;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #ffff00;
+        }
+
+        .back-link:hover {
+            background: #ffff00;
+            color: #000000;
+            text-shadow: none;
+            box-shadow: 0 0 20px #ffff00;
+        }
+
+        .section {
+            background: #0a0a0a;
+            padding: 30px;
+            border: 4px solid #00ff00;
+            box-shadow:
+                0 0 20px rgba(0, 255, 0, 0.5),
+                inset 0 0 30px rgba(0, 255, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section::before {
+            content: '▶';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #ff00ff;
+            font-size: 1.5em;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: #ff00ff;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        h3 {
+            font-family: 'Press Start 2P', cursive;
+            color: #00ffff;
+            margin-bottom: 15px;
+            margin-top: 25px;
+            font-size: 0.9em;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        p,
+        li {
+            color: #00ff00;
+            font-size: 1.5em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: '◆ ';
+            color: #ffff00;
+            margin-right: 10px;
+        }
+
+        .highlight {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        a.link {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        a.link:hover {
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1a1a1a;
+            border: 3px solid #ff00ff;
+            margin-top: 30px;
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        footer p {
+            color: #00ffff;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1em;
+            }
+
+            h3 {
+                font-size: 0.8em;
+            }
+
+            p,
+            li {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href='/' class="back-link">← BACK TO HOME</a>
+
+        <header>
+            <h1>AGENTIC-MCP-TOOLS</h1>
+        </header>
+
+        <div class="section">
+            <h2>What is Agentic-MCP-Tools?</h2>
+            <p>
+                <span class="highlight">Agentic-MCP-Tools</span> is a Model Context Protocol (MCP) server
+                built by Tyrel Barstow. It exposes a set of tools that AI agents (such as Claude) can call
+                to take real actions on a user's behalf — for example, looking up information, calling
+                external APIs, and automating routine tasks.
+            </p>
+            <p>
+                The goal of the project is to make it easy for an AI agent to safely and reliably interact
+                with external systems through a well-defined set of tools, rather than relying on
+                ad-hoc scripts or one-off integrations.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>How It Works</h2>
+            <ul>
+                <li>The server implements the Model Context Protocol (MCP), an open standard for connecting AI agents to tools and data sources.</li>
+                <li>An AI agent connects to the server and discovers the available tools.</li>
+                <li>When the agent needs to perform an action, it calls the relevant tool with the appropriate parameters.</li>
+                <li>The server executes the action and returns the result back to the agent.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Authentication & Permissions</h2>
+            <p>
+                Where a tool needs to access a user's account or data (for example, via Google OAuth),
+                Agentic-MCP-Tools requests only the specific permissions needed for that tool to function,
+                and only with the user's explicit consent. See our
+                <a class="link" href="/privacy">Privacy Policy</a> and
+                <a class="link" href="/terms">Terms of Service</a> for details on how data is handled.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Contact</h2>
+            <p>Questions about Agentic-MCP-Tools? Reach out:</p>
+            <p>
+                <a class="link" href="mailto:tyrelcb@gmail.com?subject=Agentic-MCP-Tools%20Question">tyrelcb@gmail.com</a>
+            </p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Tyrel Barstow. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
