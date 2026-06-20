@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service - Tyrel Barstow">
+    <title>Terms of Service - Tyrel Barstow</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            color: #00ff00;
+            background: #000000;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                repeating-linear-gradient(0deg,
+                    rgba(0, 255, 0, 0.03) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(0, 255, 0, 0.03) 3px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #1a1a1a;
+            border: 4px solid #00ff00;
+            margin-bottom: 30px;
+            box-shadow:
+                0 0 10px #00ff00,
+                inset 0 0 20px rgba(0, 255, 0, 0.1);
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            color: #ff00ff;
+            text-shadow:
+                3px 3px 0px #00ffff,
+                6px 6px 0px #ffff00,
+                0 0 20px #ff00ff;
+        }
+
+        .effective-date {
+            color: #66ff99;
+            font-size: 1.2em;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'Press Start 2P', cursive;
+            color: #ffff00;
+            text-decoration: none;
+            font-size: 0.7em;
+            padding: 12px 20px;
+            border: 3px solid #ffff00;
+            background: #000000;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #ffff00;
+        }
+
+        .back-link:hover {
+            background: #ffff00;
+            color: #000000;
+            text-shadow: none;
+            box-shadow: 0 0 20px #ffff00;
+        }
+
+        .section {
+            background: #0a0a0a;
+            padding: 30px;
+            border: 4px solid #00ff00;
+            box-shadow:
+                0 0 20px rgba(0, 255, 0, 0.5),
+                inset 0 0 30px rgba(0, 255, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section::before {
+            content: '▶';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #ff00ff;
+            font-size: 1.5em;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: #ff00ff;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        p,
+        li {
+            color: #00ff00;
+            font-size: 1.3em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: '◆ ';
+            color: #ffff00;
+            margin-right: 10px;
+        }
+
+        a.link {
+            color: #00ffff;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        a.link:hover {
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .highlight {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1a1a1a;
+            border: 3px solid #ff00ff;
+            margin-top: 30px;
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        footer p {
+            color: #00ffff;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.4em;
+            }
+
+            h2 {
+                font-size: 0.9em;
+            }
+
+            p,
+            li {
+                font-size: 1.15em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← BACK TO HOME</a>
+
+        <header>
+            <h1>TERMS OF SERVICE</h1>
+            <p class="effective-date">Effective Date: June 20, 2026</p>
+        </header>
+
+        <div class="section">
+            <h2>Agreement to Terms</h2>
+            <p>
+                These Terms of Service ("Terms") govern your access to and use of this website (operated by
+                <span class="highlight">FFB Investments</span>, "we", "us", or "our"). By accessing or using
+                this site, you agree to be bound by these Terms. If you do not agree, please do not use this site.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Use of the Site</h2>
+            <ul>
+                <li>You may use this site for lawful, personal, non-commercial purposes only.</li>
+                <li>You agree not to misuse the site, interfere with its operation, or attempt unauthorized access to any systems or data.</li>
+                <li>You agree not to use automated means to scrape or extract content except as permitted by robots.txt or applicable law.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Intellectual Property</h2>
+            <p>
+                All content on this site, including text, graphics, logos, and code, is owned by or
+                licensed to us and is protected by copyright and other intellectual property laws, unless
+                otherwise noted. You may not reproduce, distribute, or create derivative works from this
+                content without prior written permission.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Third-Party Links</h2>
+            <p>
+                This site may contain links to third-party websites or services that are not owned or
+                controlled by us. We are not responsible for the content, privacy policies, or practices
+                of any third-party sites. You access such links at your own risk.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Disclaimer of Warranties</h2>
+            <p>
+                This site and its content are provided "as is" and "as available" without warranties of
+                any kind, whether express or implied, including but not limited to warranties of
+                merchantability, fitness for a particular purpose, or non-infringement. We do not warrant
+                that the site will be uninterrupted, error-free, or secure.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Limitation of Liability</h2>
+            <p>
+                To the fullest extent permitted by law, we shall not be liable for any indirect,
+                incidental, special, consequential, or punitive damages arising out of or related to your
+                use of, or inability to use, this site.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Changes to the Site or Terms</h2>
+            <p>
+                We may modify, suspend, or discontinue the site, or update these Terms, at any time without
+                notice. Changes to these Terms will be posted on this page with a revised effective date.
+                Continued use of the site after changes are posted constitutes acceptance of the updated Terms.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Governing Law</h2>
+            <p>
+                These Terms are governed by the laws of the jurisdiction in which FFB Investments operates,
+                without regard to conflict-of-law principles, unless otherwise required by applicable law.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Contact</h2>
+            <p>If you have questions about these Terms, contact us at:</p>
+            <p>
+                <a class="link" href="mailto:tyrel@ffbinvestments.com?subject=Terms%20of%20Service%20Question">tyrel@ffbinvestments.com</a>
+            </p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Tyrel Barstow. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
